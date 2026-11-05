@@ -3,6 +3,7 @@ package com.example.coloursandscreens;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -10,5 +11,9 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        TextView tvSecondScreen = findViewById(R.id.tvSecondScreen);
+        String colourName = getIntent().getStringExtra("chosenColour");
+        tvSecondScreen.setText("You picked: " + colourName);
     }
 }
